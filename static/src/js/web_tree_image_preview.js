@@ -43,5 +43,5 @@ odoo.define('web.tree_image_preview', function (require) {
     });
 
     list_widget_registry
-    .add('field.image', WebTreeImage)
+    .add('field.image-preview', WebTreeImage)
 });
