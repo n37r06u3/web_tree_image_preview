@@ -10,5 +10,8 @@ Model:
 View:
 ```<field name="img" widget="image-preview"/>```
 
+Screenshot:
 
+![screenshot-1.png](static/description/screenshot-1.png)
 
+![screenshot-2.png](static/description/screenshot-2.png)
