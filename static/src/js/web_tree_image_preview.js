@@ -48,13 +48,13 @@ odoo.define('web.tree_image_preview', function (require) {
                         tree_image_preview_box.show();
                     }
                     else {
-                        var lightbox =
+                        var preview_box =
                             '<div id="tree_image_preview_box" onclick="this.style.display = \'none\';">' +
                             '<div id="content">' +
                             '<img src="' + image_href + '" />' +
                             '</div>' +
                             '</div>';
-                        $('body').append(lightbox);
+                        $('body').append(preview_box);
                     }
                     return false;
                 });
