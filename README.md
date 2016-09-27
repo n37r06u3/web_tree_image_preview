@@ -1,2 +1,14 @@
 # web_tree_image_preview
 odoo addons
+
+How to use:
+
+Model:
+```img = fields.Binary(attachment=True)```
+
+
+View:
+```<field name="img" widget="image-preview"/>```
+
+
+
