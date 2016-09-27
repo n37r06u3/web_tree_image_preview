@@ -2,5 +2,5 @@
     <img t-name="ListView.row.image.preview"
          t-att-height="widget.height || 100"
          t-att-src="src" 
-         class="oe_image_tree"/>
+         class="oe_image_tree web_tree_image_preview"/>
 </templates>

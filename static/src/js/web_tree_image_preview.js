@@ -2,23 +2,17 @@ odoo.define('web.tree_image_preview', function (require) {
     "use strict";
     var core = require('web.core');
     var session = require('web.session');
+    var ListView = require('web.ListView');
     var QWeb = core.qweb;
     var list_widget_registry = core.list_widget_registry;
-    var WebTreeImage = list_widget_registry.get('field.binary').extend({
+    var WebTreeImagePreview = list_widget_registry.get('field.binary').extend({
         format: function (row_data, options) {
-            /* Return a valid img tag. For image fields, test if the
-             field's value contains just the binary size and retrieve
-            the image from the dedicated controller in that case.
-            Otherwise, assume a character field containing either a
-            stock Odoo icon name without path or extension or a fully
-            fledged location or data url */
             if (!row_data[this.id] || !row_data[this.id].value) {
                 return '';
             }
             var value = row_data[this.id].value, src;
             if (this.type === 'binary') {
                 if (value && value.substr(0, 10).indexOf(' ') === -1) {
-                    // The media subtype (png) seems to be arbitrary
                     src = "data:image/png;base64," + value;
                 } else {
                     var imageArgs = {
@@ -42,6 +36,32 @@ odoo.define('web.tree_image_preview', function (require) {
         }
     });
 
-    list_widget_registry
-    .add('field.image-preview', WebTreeImage)
+    ListView.List.include({
+        render: function () {
+            var result = this._super(this, arguments)
+            this.$current.delegate('img.web_tree_image_preview',
+                'click', function () {
+                    var image_href = $(this).attr('src');
+                    var tree_image_preview_box = $('#tree_image_preview_box')
+                    if (tree_image_preview_box.length > 0) {
+                        $('#content').html('<img src="' + image_href + '" />');
+                        tree_image_preview_box.show();
+                    }
+                    else {
+                        var lightbox =
+                            '<div id="tree_image_preview_box" onclick="this.style.display = \'none\';">' +
+                            '<div id="content">' +
+                            '<img src="' + image_href + '" />' +
+                            '</div>' +
+                            '</div>';
+                        $('body').append(lightbox);
+                    }
+                    return false;
+                });
+            return result;
+        },
+    });
+
+
+    list_widget_registry.add('field.image-preview', WebTreeImagePreview)
 });

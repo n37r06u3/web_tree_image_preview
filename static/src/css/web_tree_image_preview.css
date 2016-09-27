@@ -6,6 +6,7 @@
     height:100%;
     background: rgba(0,0,0,.7);
     text-align:center;
+    z-index: 9999;
 }
 
 #tree_image_preview_box img {
@@ -13,4 +14,5 @@
     -webkit-box-shadow:0 0 25px #111;
     -moz-box-shadow:0 0 25px #111;
     max-width:90%;
+    margin-top:33px;
 }
