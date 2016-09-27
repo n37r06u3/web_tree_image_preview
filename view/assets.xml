@@ -1,0 +1,8 @@
+<odoo>
+    <template id="assets_backend_tree_image_preview" name="tree image preview" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/web_tree_image_preview/static/src/js/web_tree_image_preview.js" />
+            <link rel="stylesheet" href="/web_tree_image_preview/static/src/css/web_tree_image_preview.css" />
+        </xpath>
+    </template>
+</odoo>

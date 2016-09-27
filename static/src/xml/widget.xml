@@ -1,0 +1,6 @@
+<templates xml:space="preserve">
+    <img t-name="ListView.row.image.preview"
+         t-att-height="widget.height || 100"
+         t-att-src="src" 
+         class="oe_image_tree"/>
+</templates>
