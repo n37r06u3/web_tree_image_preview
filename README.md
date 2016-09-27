@@ -12,6 +12,6 @@ View:
 
 Screenshot:
 
-![screenshot-1.png](static/description/screenshot-1.png)
+![screenshot-10.png](static/description/screenshot-10.png)
 
-![screenshot-2.png](static/description/screenshot-2.png)
+![screenshot-20.png](static/description/screenshot-20.png)
