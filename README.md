@@ -1,5 +1,5 @@
 # web_tree_image_preview
-odoo addons
+odoo9 tree view image preview addon
 
 How to use:
 
